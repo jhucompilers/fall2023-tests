@@ -1,0 +1,40 @@
+Arithmetic (literals with a single operator)
+
+addition
+subtraction
+multiplication
+division
+
+Comparisions (literals with a single operator)
+
+<
+<=
+>
+>=
+==
+!=
+
+Logical operators (literals with a single operator)
+
+&&
+||
+
+Operator precedence (literals with multiple operators)
+
+Mixed additive and multiplicative operators
+Comparisons of values computed using aritmetic
+Use of parentheses to force evaluation order
+
+Variables and assignments
+
+Defining (but not using a variable)
+Defining and assigning to a variable
+Assigning a variable from a computed value
+Using assigned variables in an expression
+
+Error handling
+
+Invalid token
+Syntax error (of various kinds)
+Referring to a undefined variable
+Division by 0

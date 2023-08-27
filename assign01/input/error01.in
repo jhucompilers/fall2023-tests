@@ -1,0 +1,3 @@
+var @foobar;
+@foobar = 12;
+@foobar;
