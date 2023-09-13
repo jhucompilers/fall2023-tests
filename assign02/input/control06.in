@@ -1,0 +1,12 @@
+var year;
+var a;
+
+year = 1900;
+a = 0;
+if (( (year / 4) * 4 == year &&
+      (year / 100) * 100 != year ) ||
+    (year / 400) * 400 == year) {
+  a = 1;
+}
+
+a;

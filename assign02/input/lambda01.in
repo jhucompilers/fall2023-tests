@@ -1,0 +1,7 @@
+function mkadd(n) {
+  function(x) { x + n; };
+}
+
+var add1;
+add1 = mkadd(1);
+add1(2);

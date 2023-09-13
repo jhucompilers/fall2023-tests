@@ -1,0 +1,21 @@
+function fibhelp(a, b, n) {
+  var result;
+  if (n == 0) {
+    result = b;
+  } else {
+    result = fibhelp(b, a + b, n - 1);
+  }
+  result;
+}
+
+function fib(n) {
+  var result;
+  if (n < 2) {
+    result = n;
+  } else {
+    result = fibhelp(0, 1, n - 1);
+  }
+  result;
+}
+
+fib(readint());

@@ -1,0 +1,9 @@
+var a;
+var b;
+var c;
+
+a = 0;
+b = 11;
+c = 0;
+
+a && (b / c);

@@ -1,0 +1,6 @@
+var s;
+s = "foobarbaz";
+var s2;
+s2 = substr(s, 2, 6);
+println(s2);
+49;

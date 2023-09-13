@@ -1,0 +1,14 @@
+var g;
+g = 42;
+
+function f(x) {
+  x + g;
+}
+
+function q(x) {
+  var g;
+  g = 17;
+  f(x);
+}
+
+q(1);

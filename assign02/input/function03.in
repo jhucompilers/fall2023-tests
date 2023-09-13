@@ -1,0 +1,9 @@
+function f(a, b) {
+  var b;
+  b = 3;
+  a * b;
+}
+
+var x;
+x = f(9, 4);
+x;

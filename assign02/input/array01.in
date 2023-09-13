@@ -1,0 +1,3 @@
+var a;
+a = mkarr(1, 2, 3);
+get(a, 0) + get(a, 1) + get(a, 2);

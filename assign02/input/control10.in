@@ -1,0 +1,31 @@
+var i;
+var n;
+
+n = 11;
+
+i = 0;
+while (i < n) {
+  var j;
+  j = 0;
+  while (j < n) {
+    if (j == n-1) {
+      println(8);
+    } else {
+      if ((i == 0 || j == 0) || i == n-1) {
+        print(8);
+      } else {
+        if (j == i || n - j - 1 == i) {
+          print(8);
+        } else {
+          print(1);
+        }
+      }
+    }
+
+    j = j + 1;
+  }
+
+  i = i + 1;
+}
+
+1;

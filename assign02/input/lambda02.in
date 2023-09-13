@@ -1,0 +1,11 @@
+function mkaddn(n) {
+  function(x) { x + n; };
+}
+
+var add1;
+var add2;
+add1 = mkaddn(1);
+add2 = mkaddn(2);
+
+println(add1(1));
+println(add2(1));

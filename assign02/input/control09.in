@@ -1,0 +1,20 @@
+var a;
+var b;
+var tmp;
+var i;
+var n;
+
+n = 11;
+
+a = 0;
+b = 1;
+i = 2;
+
+while (i <= n) {
+  tmp = b;
+  b = a + b;
+  a = tmp;
+  i = i + 1;
+}
+
+b;
