@@ -1,0 +1,1 @@
+input/badassign02.c:11:8:Error: Incompatible types (array of 4 x int, array of 4 x int) in assignment

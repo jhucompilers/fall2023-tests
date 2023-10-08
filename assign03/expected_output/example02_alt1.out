@@ -1,0 +1,5 @@
+0|add|function|function () returning int
+1|a|variable|int
+1|b|variable|int
+0|main|function|function () returning int
+2|sum|variable|int

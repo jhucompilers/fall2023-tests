@@ -1,0 +1,53 @@
+Structs
+
+Nested struct instance (structtype02) ✓
+Array of struct elements (structtype03) ✓
+Variable declaration with mixed struct/pointer to struct/array of struct declarators (structtype04) ✓
+struct type with array member (structtype05, structtype06) ✓
+array of pointers to structs (structtype07) ✓
+recursive struct (i.e., linked list node) (structtype08) ✓
+
+Type representation
+
+char, signed char, unsigned char variables (basictype01) ✓
+short, signed short, unsigned short variables (basictype02) ✓
+int, signed int, unsigned int variables (basictype03) ✓
+long, signed long, unsigned long variables (basictype04) ✓
+"unsigned" and "signed" can be used to define variables (implicit int) (basictype05) ✓
+"long int" and "short int" are allowed (basictype06) ✓
+unusual orderings of basic type keywords (basictype07) ✓
+qualified basic types (really only volatile will make sense due to lack of initialization) (basictype08) ✓
+
+Type checking
+
+assign array to pointer should be allowed (example06) ✓
+a pointer assignment which *adds* qualifiers should be allowed (example07) ✓
+subscripting a pointer should be allowed (example08) ✓
+a pointer to pointer should be allowed to be subscripted twice (example09) ✓
+pointer arithmetic should be allowed (example10, example11) ✓
+variables defined in nested scopes should be handled correctly (example18) ✓
+
+Expressions
+
+unary operators - and ! should be supported (example12, example13) ✓
+logical operators || and && should be supported (example14, example15) ✓
+relational operators should be supported (example16, example17) ✓
+
+Error checking
+
+assignment to array should not be allowed (badassign02) ✓
+pointer assignment which drops const qualifier (badassign01) ✓
+pointer assignment which drops volatile qualifier (badassign03) ✓
+
+[additional error checking tests could be taking examples that
+are valid, and modifying them in a small way to produce an
+example that is not valid]
+
+assignment to literal (badassign04) ✓
+assignment to computed value (badassign05) ✓
+non-numeric operands to relational operators (badexpr03, badexpr04) ✓
+non-numeric operands to logical operators (badexpr05, badexpr06) ✓
+
+non-numeric value returned from function returning int (or other integer type) (badassign06) ✓
+
+type checking error in a deeply nested scope (badassign07) ✓

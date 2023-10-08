@@ -1,0 +1,4 @@
+0|incr|function|function () returning void
+1|p|variable|pointer to int
+0|main|function|function () returning int
+2|a|variable|int

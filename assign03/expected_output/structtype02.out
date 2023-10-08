@@ -1,0 +1,9 @@
+0|struct Point|type|struct Point {}
+1|x|variable|int
+1|y|variable|int
+0|struct Player|type|struct Player {}
+1|location|variable|struct Point {int, int}
+1|symbol|variable|char
+1|health|variable|short
+0|main|function|function () returning int
+2|p|variable|struct Player {struct Point {int, int}, char, short}

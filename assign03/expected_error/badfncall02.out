@@ -1,0 +1,1 @@
+input/badfncall02.c:5:12:Error: Invalid argument type 'pointer to const char' passed for parameter of type 'int'

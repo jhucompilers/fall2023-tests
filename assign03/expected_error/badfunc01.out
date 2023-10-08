@@ -1,0 +1,1 @@
+input/badfunc01.c:7:5:Error: name 'x' already defined in this scope

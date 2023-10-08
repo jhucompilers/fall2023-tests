@@ -1,0 +1,3 @@
+0|main|function|function () returning int
+2|arr|variable|array of 10 x int
+2|p|variable|pointer to int

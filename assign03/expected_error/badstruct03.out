@@ -1,0 +1,1 @@
+input/badstruct03.c:6:8:Error: Redefinition of struct type 'struct Foo'

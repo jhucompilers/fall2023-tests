@@ -1,0 +1,1 @@
+input/badstruct02.c:8:10:Error: Unknown struct type 'struct Bar'

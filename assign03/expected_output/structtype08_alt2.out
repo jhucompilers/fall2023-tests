@@ -1,0 +1,7 @@
+0|struct Node|type|struct Node {}
+1|data|variable|int
+1|next|variable|pointer to struct Node {int}
+0|main|function|function () returning int
+2|n1|variable|struct Node {int, pointer to struct Node}
+2|n2|variable|struct Node {int, pointer to struct Node}
+2|n3|variable|struct Node {int, pointer to struct Node}

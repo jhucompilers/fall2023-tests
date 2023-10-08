@@ -1,0 +1,10 @@
+0|struct Foo|type|struct Foo {}
+1|x|variable|int
+1|y|variable|char
+0|readint|function|function () returning int
+0|main|function|function () returning int
+2|result|variable|int
+2|f|variable|int
+3|f|variable|struct Foo {int, char}
+5|f|variable|pointer to const char
+5|f|variable|unsigned long

@@ -1,0 +1,6 @@
+0|struct Foo|type|struct Foo {}
+1|x|variable|int
+0|main|function|function () returning int
+2|f1|variable|struct Foo {int}
+2|f2|variable|struct Foo {int}
+2|arr|variable|array of 2 x pointer to struct Foo {int}

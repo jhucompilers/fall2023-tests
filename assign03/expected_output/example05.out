@@ -1,0 +1,6 @@
+0|sum|function|function (int, int) returning int
+1|a|variable|int
+1|b|variable|int
+2|result|variable|int
+0|main|function|function () returning int
+2|x|variable|int

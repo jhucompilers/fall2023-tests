@@ -1,0 +1,14 @@
+0|struct Point|type|struct Point {}
+1|x|variable|int
+1|y|variable|int
+0|sq_dist|function|function () returning int
+1|p1|variable|pointer to struct Point {int, int}
+1|p2|variable|pointer to struct Point {int, int}
+1|p1|variable|pointer to struct Point {int, int}
+1|p2|variable|pointer to struct Point {int, int}
+2|xdiff|variable|int
+2|ydiff|variable|int
+0|main|function|function () returning int
+2|a|variable|struct Point {int, int}
+2|b|variable|struct Point {int, int}
+2|result|variable|int

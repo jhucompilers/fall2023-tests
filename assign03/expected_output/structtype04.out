@@ -1,0 +1,7 @@
+0|struct Item|type|struct Item {}
+1|foo|variable|int
+1|bar|variable|char
+0|main|function|function () returning int
+2|x|variable|struct Item {int, char}
+2|y|variable|pointer to struct Item {int, char}
+2|z|variable|array of 10 x struct Item {int, char}

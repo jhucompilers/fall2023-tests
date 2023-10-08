@@ -1,0 +1,1 @@
+input/badptr02.c:3:7:Error: Taking address of non-lvalue

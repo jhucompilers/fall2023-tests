@@ -1,0 +1,1 @@
+input/badfunc02.c:5:1:Error: redeclaration of 'foo' is incompatible with previous declaration

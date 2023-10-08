@@ -1,0 +1,1 @@
+input/badtype01.c:2:3:Error: 'long' and 'short' cannot be used with 'char'

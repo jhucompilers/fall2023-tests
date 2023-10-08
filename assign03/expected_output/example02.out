@@ -1,0 +1,3 @@
+0|add|function|function (int, int) returning int
+0|main|function|function () returning int
+2|sum|variable|int

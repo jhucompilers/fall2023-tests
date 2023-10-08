@@ -1,0 +1,4 @@
+0|sum|function|function (array of 0 x int, int) returning int
+0|main|function|function () returning int
+2|a|variable|array of 5 x int
+2|tot|variable|int

@@ -1,0 +1,1 @@
+input/badassign03.c:9:5:Error: Incompatible types (pointer to int, pointer to volatile int) in assignment

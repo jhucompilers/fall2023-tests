@@ -1,0 +1,7 @@
+0|strcpy|function|function (pointer to char, pointer to const char) returning void
+0|struct Item|type|struct Item {}
+1|name|variable|array of 32 x char
+1|price|variable|int
+1|quantity|variable|int
+0|main|function|function () returning int
+2|item|variable|struct Item {array of 32 x char, int, int}

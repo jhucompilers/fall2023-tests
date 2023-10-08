@@ -1,0 +1,1 @@
+input/badassign06.c:14:10:Error: Return value of type struct Foo {int} is incompatible with return type int

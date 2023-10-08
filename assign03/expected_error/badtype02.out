@@ -1,0 +1,1 @@
+input/badtype02.c:1:1:Error: 'const' and 'volatile' cannot be used with 'void'

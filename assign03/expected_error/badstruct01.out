@@ -1,0 +1,1 @@
+input/badstruct01.c:14:3:Error: Left hand side of '.' is not a struct

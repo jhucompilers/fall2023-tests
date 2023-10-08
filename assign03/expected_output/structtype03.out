@@ -1,0 +1,6 @@
+0|struct Point|type|struct Point {}
+1|x|variable|int
+1|y|variable|int
+0|main|function|function () returning int
+2|points|variable|array of 10 x struct Point {int, int}
+2|i|variable|int
