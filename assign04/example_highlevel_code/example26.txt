@@ -1,0 +1,86 @@
+/* variable 'p' allocated 24 bytes of storage at offset 0 */
+/* variable 's' allocated vreg 10 */
+/* Function 'main' uses 24 bytes of memory and 11 virtual registers */
+	.section .text
+
+	.globl main
+main:
+	enter    $24
+	localaddr vr11, $0
+	mov_q    vr12, $0
+	add_q    vr13, vr11, vr12
+	mov_l    vr14, $0
+	sconv_lq vr15, vr14
+	mul_q    vr16, vr15, $1
+	add_q    vr17, vr13, vr16
+	mov_b    vr18, $65
+	mov_b    (vr17), vr18
+	localaddr vr11, $0
+	mov_q    vr12, $0
+	add_q    vr13, vr11, vr12
+	mov_l    vr14, $1
+	sconv_lq vr15, vr14
+	mul_q    vr16, vr15, $1
+	add_q    vr17, vr13, vr16
+	mov_b    vr18, $108
+	mov_b    (vr17), vr18
+	localaddr vr11, $0
+	mov_q    vr12, $0
+	add_q    vr13, vr11, vr12
+	mov_l    vr14, $2
+	sconv_lq vr15, vr14
+	mul_q    vr16, vr15, $1
+	add_q    vr17, vr13, vr16
+	mov_b    vr18, $105
+	mov_b    (vr17), vr18
+	localaddr vr11, $0
+	mov_q    vr12, $0
+	add_q    vr13, vr11, vr12
+	mov_l    vr14, $3
+	sconv_lq vr15, vr14
+	mul_q    vr16, vr15, $1
+	add_q    vr17, vr13, vr16
+	mov_b    vr18, $99
+	mov_b    (vr17), vr18
+	localaddr vr11, $0
+	mov_q    vr12, $0
+	add_q    vr13, vr11, vr12
+	mov_l    vr14, $4
+	sconv_lq vr15, vr14
+	mul_q    vr16, vr15, $1
+	add_q    vr17, vr13, vr16
+	mov_b    vr18, $101
+	mov_b    (vr17), vr18
+	localaddr vr11, $0
+	mov_q    vr12, $0
+	add_q    vr13, vr11, vr12
+	mov_l    vr14, $5
+	sconv_lq vr15, vr14
+	mul_q    vr16, vr15, $1
+	add_q    vr17, vr13, vr16
+	mov_l    vr18, $0
+	mov_b    (vr17), vr18
+	localaddr vr11, $0
+	mov_q    vr12, $20
+	add_q    vr13, vr11, vr12
+	mov_l    vr14, $43
+	mov_l    (vr13), vr14
+	localaddr vr11, $0
+	mov_q    vr12, $0
+	add_q    vr13, vr11, vr12
+	mov_q    vr10, vr13
+	mov_q    vr1, vr10
+	call     print_str
+	call     print_nl
+	localaddr vr11, $0
+	mov_q    vr12, $20
+	add_q    vr13, vr11, vr12
+	mov_l    vr1, (vr13)
+	call     print_i32
+	call     print_nl
+	mov_l    vr11, $0
+	mov_l    vr0, vr11
+	jmp      .Lmain_return
+.Lmain_return:
+	leave    $24
+	ret      

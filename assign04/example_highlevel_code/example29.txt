@@ -1,0 +1,158 @@
+/* variable 'arr' allocated vreg 10 */
+/* variable 'i' allocated vreg 11 */
+/* Function 'read_m500x500' uses 0 bytes of memory and 12 virtual registers */
+/* variable 'a' allocated 2000000 bytes of storage at offset 0 */
+/* variable 'b' allocated 2000000 bytes of storage at offset 2000000 */
+/* variable 'c' allocated 2000000 bytes of storage at offset 4000000 */
+/* variable 'M' allocated vreg 10 */
+/* variable 'NELTS' allocated vreg 11 */
+/* variable 'SZ' allocated vreg 12 */
+/* variable 'i' allocated vreg 13 */
+/* variable 'j' allocated vreg 14 */
+/* variable 'k' allocated vreg 15 */
+/* variable 'r' allocated vreg 16 */
+/* variable 'val' allocated vreg 17 */
+/* Function 'main' uses 6000000 bytes of memory and 18 virtual registers */
+	.section .text
+
+	.globl read_m500x500
+read_m500x500:
+	enter    $0
+	mov_q    vr10, vr1
+	mov_l    vr0, $0
+	mov_l    vr11, vr0
+	jmp      .L1
+.L0:
+	sconv_lq vr12, vr11
+	mul_q    vr13, vr12, $8
+	add_q    vr14, vr10, vr13
+	call     read_i64
+	mov_q    vr15, vr0
+	mov_q    (vr14), vr15
+	mov_l    vr16, $1
+	add_l    vr17, vr11, vr16
+	mov_l    vr11, vr17
+.L1:
+	mov_l    vr18, $250000
+	cmplt_l  vr19, vr11, vr18
+	cjmp_t   vr19, .L0
+.Lread_m500x500_return:
+	leave    $0
+	ret      
+
+	.globl main
+main:
+	enter    $6000000
+	mov_l    vr18, $500
+	mov_l    vr10, vr18
+	mov_l    vr18, $250000
+	mov_l    vr11, vr18
+	localaddr vr18, $0
+	mov_q    vr1, vr18
+	call     read_m500x500
+	localaddr vr18, $2000000
+	mov_q    vr1, vr18
+	call     read_m500x500
+	mov_l    vr19, $0
+	mov_l    vr13, vr19
+	jmp      .L3
+.L2:
+	localaddr vr18, $4000000
+	sconv_lq vr19, vr13
+	mul_q    vr20, vr19, $8
+	add_q    vr21, vr18, vr20
+	mov_q    vr22, $0
+	mov_q    (vr21), vr22
+	mov_l    vr23, $1
+	add_l    vr24, vr13, vr23
+	mov_l    vr13, vr24
+.L3:
+	cmplt_l  vr25, vr13, vr11
+	cjmp_t   vr25, .L2
+	mov_l    vr26, $0
+	mov_l    vr15, vr26
+	jmp      .L5
+.L4:
+	mov_l    vr27, $0
+	mov_l    vr13, vr27
+	jmp      .L7
+.L6:
+	localaddr vr18, $0
+	mul_l    vr19, vr13, vr10
+	add_l    vr20, vr19, vr15
+	sconv_lq vr21, vr20
+	mul_q    vr22, vr21, $8
+	add_q    vr23, vr18, vr22
+	mov_q    vr24, (vr23)
+	mov_q    vr16, vr24
+	mov_l    vr25, $0
+	mov_l    vr14, vr25
+	jmp      .L9
+.L8:
+	localaddr vr18, $4000000
+	mul_l    vr19, vr13, vr10
+	add_l    vr20, vr19, vr14
+	sconv_lq vr21, vr20
+	mul_q    vr22, vr21, $8
+	add_q    vr23, vr18, vr22
+	mov_q    vr24, (vr23)
+	mov_q    vr17, vr24
+	localaddr vr18, $2000000
+	mul_l    vr19, vr15, vr10
+	add_l    vr20, vr19, vr14
+	sconv_lq vr21, vr20
+	mul_q    vr22, vr21, $8
+	add_q    vr23, vr18, vr22
+	mov_q    vr25, (vr23)
+	mul_q    vr24, vr16, vr25
+	add_q    vr26, vr17, vr24
+	mov_q    vr17, vr26
+	localaddr vr18, $4000000
+	mul_l    vr19, vr13, vr10
+	add_l    vr20, vr19, vr14
+	sconv_lq vr21, vr20
+	mul_q    vr22, vr21, $8
+	add_q    vr23, vr18, vr22
+	mov_q    (vr23), vr17
+	mov_l    vr24, $1
+	add_l    vr25, vr14, vr24
+	mov_l    vr14, vr25
+.L9:
+	cmplt_l  vr26, vr14, vr10
+	cjmp_t   vr26, .L8
+	mov_l    vr27, $1
+	add_l    vr28, vr13, vr27
+	mov_l    vr13, vr28
+.L7:
+	cmplt_l  vr29, vr13, vr10
+	cjmp_t   vr29, .L6
+	mov_l    vr30, $1
+	add_l    vr31, vr15, vr30
+	mov_l    vr15, vr31
+.L5:
+	cmplt_l  vr32, vr15, vr10
+	cjmp_t   vr32, .L4
+	mov_l    vr33, $0
+	mov_l    vr13, vr33
+	jmp      .L11
+.L10:
+	localaddr vr18, $4000000
+	sconv_lq vr19, vr13
+	mul_q    vr20, vr19, $8
+	add_q    vr21, vr18, vr20
+	mov_q    vr1, (vr21)
+	call     print_i64
+	call     print_nl
+	mov_l    vr18, $1
+	add_l    vr19, vr13, vr18
+	mov_l    vr13, vr19
+.L11:
+	mov_l    vr20, $250000
+	cmplt_l  vr21, vr13, vr20
+	cjmp_t   vr21, .L10
+	mov_l    vr18, $0
+	mov_l    vr0, vr18
+	jmp      .Lmain_return
+.Lmain_return:
+	leave    $6000000
+	ret      
