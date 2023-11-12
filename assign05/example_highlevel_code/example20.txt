@@ -1,0 +1,60 @@
+/* variable 'c' allocated vreg 10 */
+/* Function 'ctoi' uses 0 bytes of memory and 11 virtual registers */
+/* Function 'main' uses 0 bytes of memory and 10 virtual registers */
+	.section .text
+
+	.globl ctoi
+ctoi:
+	enter    $0
+	mov_b    vr10, vr1
+	sconv_bl vr11, vr10
+	mov_l    vr0, vr11
+	jmp      .Lctoi_return
+.Lctoi_return:
+	leave    $0
+	ret      
+
+	.globl main
+main:
+	enter    $0
+	mov_b    vr10, $72
+	mov_b    vr1, vr10
+	call     ctoi
+	mov_l    vr11, vr0
+	mov_l    vr1, vr11
+	call     print_i32
+	call     print_nl
+	mov_b    vr10, $101
+	mov_b    vr1, vr10
+	call     ctoi
+	mov_l    vr11, vr0
+	mov_l    vr1, vr11
+	call     print_i32
+	call     print_nl
+	mov_b    vr10, $108
+	mov_b    vr1, vr10
+	call     ctoi
+	mov_l    vr11, vr0
+	mov_l    vr1, vr11
+	call     print_i32
+	call     print_nl
+	mov_b    vr10, $108
+	mov_b    vr1, vr10
+	call     ctoi
+	mov_l    vr11, vr0
+	mov_l    vr1, vr11
+	call     print_i32
+	call     print_nl
+	mov_b    vr10, $111
+	mov_b    vr1, vr10
+	call     ctoi
+	mov_l    vr11, vr0
+	mov_l    vr1, vr11
+	call     print_i32
+	call     print_nl
+	mov_l    vr10, $0
+	mov_l    vr0, vr10
+	jmp      .Lmain_return
+.Lmain_return:
+	leave    $0
+	ret      

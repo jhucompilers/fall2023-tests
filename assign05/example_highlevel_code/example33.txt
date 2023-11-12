@@ -1,0 +1,65 @@
+/* variable 'n' allocated vreg 10 */
+/* variable 'a' allocated vreg 11 */
+/* variable 'b' allocated vreg 12 */
+/* variable 'c' allocated vreg 13 */
+/* variable 'i' allocated vreg 14 */
+/* Function 'fib' uses 0 bytes of memory and 15 virtual registers */
+/* variable 'n' allocated vreg 10 */
+/* Function 'main' uses 0 bytes of memory and 11 virtual registers */
+	.section .text
+
+	.globl fib
+fib:
+	enter    $0
+	mov_l    vr10, vr1
+	mov_l    vr15, $1
+	cmplte_l vr16, vr10, vr15
+	cjmp_f   vr16, .L0
+	mov_l    vr0, vr10
+	jmp      .Lfib_return
+.L0:
+	mov_l    vr17, $0
+	mov_l    vr11, vr17
+	mov_l    vr18, $1
+	mov_l    vr12, vr18
+	mov_l    vr19, $2
+	mov_l    vr14, vr19
+	jmp      .L2
+.L1:
+	add_l    vr15, vr11, vr12
+	mov_l    vr13, vr15
+	mov_l    vr11, vr12
+	mov_l    vr12, vr13
+	mov_l    vr16, $1
+	add_l    vr17, vr14, vr16
+	mov_l    vr14, vr17
+.L2:
+	cmplte_l vr18, vr14, vr10
+	cjmp_t   vr18, .L1
+	mov_l    vr0, vr12
+	jmp      .Lfib_return
+	jmp      .Lfib_return
+.Lfib_return:
+	leave    $0
+	ret      
+
+	.globl main
+main:
+	enter    $0
+	call     read_i32
+	mov_l    vr11, vr0
+	mov_l    vr10, vr11
+	mov_l    vr1, vr10
+	call     fib
+	mov_l    vr12, vr0
+	mov_l    vr10, vr12
+	mov_l    vr1, vr10
+	call     print_i32
+	call     print_nl
+	mov_l    vr13, $0
+	mov_l    vr0, vr13
+	jmp      .Lmain_return
+	jmp      .Lmain_return
+.Lmain_return:
+	leave    $0
+	ret      

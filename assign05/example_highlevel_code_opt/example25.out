@@ -1,0 +1,60 @@
+/* variable 'points' allocated 24 bytes of storage at offset 0 */
+/* variable 'i' allocated vreg 10 */
+/* variable 'count' allocated vreg 11 */
+/* Function 'main' uses 24 bytes of memory and 12 virtual registers */
+/* allocate machine register %rbx to variable 'i' (vr10), rank is 202 */
+/* allocate machine register %r12 to variable 'count' (vr11), rank is 121 */
+	.section .text
+
+	.globl main
+main:
+	enter    $24
+	mov_l    vr11, $11
+	mov_l    vr10, $0
+	jmp      .L1
+.L0:
+	localaddr vr12<%r9>, $0
+	sconv_lq vr13<%r8>, vr10
+	mul_q    vr14<%rcx>, vr13<%r8>, $8
+	add_q    vr15<%rdx>, vr12<%r9>, vr14<%rcx>
+	add_q    vr17<%rsi>, vr15<%rdx>, $0
+	mov_l    (vr17<%esi>), vr11
+	add_l    vr19<%r8d>, vr11, $1
+	add_q    vr25<%r9>, vr15<%rdx>, $4
+	mov_l    (vr25<%r9d>), vr19<%r8d>
+	add_l    vr27<%ecx>, vr19<%r8d>, $1
+	mov_l    vr11, vr27<%ecx>
+	add_l    vr29<%esi>, vr10, $1
+	mov_l    vr10, vr29<%esi>
+.L1:
+	cmplt_l  vr31<%r9d>, vr10, $3
+	cjmp_t   vr31<%r9d>, .L0
+	mov_l    vr10, $2
+	jmp      .L3
+.L2:
+	localaddr vr12<%r9>, $0
+	sconv_lq vr13<%r8>, vr10
+	mul_q    vr14<%rcx>, vr13<%r8>, $8
+	add_q    vr15<%rdx>, vr12<%r9>, vr14<%rcx>
+	add_q    vr17<%rsi>, vr15<%rdx>, $0
+	mov_l    vr1, (vr17<%esi>)
+	call     print_i32
+	call     print_nl
+	localaddr vr18<%r9>, $0
+	sconv_lq vr19<%r8>, vr10
+	mul_q    vr20<%rcx>, vr19<%r8>, $8
+	add_q    vr21<%rdx>, vr18<%r9>, vr20<%rcx>
+	add_q    vr23<%rsi>, vr21<%rdx>, $4
+	mov_l    vr1, (vr23<%esi>)
+	call     print_i32
+	call     print_nl
+	sub_l    vr25<%r9d>, vr10, $1
+	mov_l    vr10, vr25<%r9d>
+.L3:
+	cmpgte_l vr27<%r9d>, vr10, $0
+	cjmp_t   vr27<%r9d>, .L2
+	mov_l    vr0, $0
+	jmp      .Lmain_return
+.Lmain_return:
+	leave    $24
+	ret      

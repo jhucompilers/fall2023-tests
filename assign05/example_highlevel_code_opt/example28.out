@@ -1,0 +1,136 @@
+/* variable 'arr' allocated vreg 10 */
+/* variable 'i' allocated vreg 11 */
+/* Function 'read_m10x10' uses 0 bytes of memory and 12 virtual registers */
+/* variable 'a' allocated 800 bytes of storage at offset 0 */
+/* variable 'b' allocated 800 bytes of storage at offset 800 */
+/* variable 'c' allocated 800 bytes of storage at offset 1600 */
+/* variable 'M' allocated vreg 10 */
+/* variable 'i' allocated vreg 11 */
+/* variable 'j' allocated vreg 12 */
+/* variable 'k' allocated vreg 13 */
+/* variable 'r' allocated vreg 14 */
+/* variable 'val' allocated vreg 15 */
+/* Function 'main' uses 2400 bytes of memory and 16 virtual registers */
+/* allocate machine register %rbx to variable 'i' (vr11), rank is 81 */
+/* allocate machine register %r12 to variable 'arr' (vr10), rank is 20 */
+	.section .text
+
+	.globl read_m10x10
+read_m10x10:
+	enter    $0
+	mov_q    vr10, vr1
+	mov_l    vr11, $0
+	jmp      .L1
+.L0:
+	call     read_i64
+	sconv_lq vr13<%r9>, vr11
+	mul_q    vr14<%r8>, vr13<%r9>, $8
+	add_q    vr15<%rcx>, vr10, vr14<%r8>
+	mov_q    (vr15<%rcx>), vr0
+	add_l    vr17<%edx>, vr11, $1
+	mov_l    vr11, vr17<%edx>
+.L1:
+	cmplt_l  vr19<%r9d>, vr11, $100
+	cjmp_t   vr19<%r9d>, .L0
+	jmp      .Lread_m10x10_return
+.Lread_m10x10_return:
+	leave    $0
+	ret      
+/* allocate machine register %rbx to variable 'j' (vr12), rank is 48400 */
+/* allocate machine register %r12 to variable 'M' (vr10), rank is 32821 */
+/* allocate machine register %r13 to variable 'val' (vr15), rank is 32000 */
+/* allocate machine register %r14 to variable 'i' (vr11), rank is 17782 */
+/* allocate machine register %r15 to variable 'k' (vr13), rank is 8461 */
+
+	.globl main
+main:
+	enter    $2400
+	mov_l    vr10, $10
+	localaddr vr17<%r9>, $0
+	mov_q    vr1, vr17<%r9>
+	call     read_m10x10
+	localaddr vr18<%r9>, $800
+	mov_q    vr1, vr18<%r9>
+	call     read_m10x10
+	mov_l    vr11, $0
+	jmp      .L3
+.L2:
+	localaddr vr17<%r9>, $1600
+	sconv_lq vr18<%r8>, vr11
+	mul_q    vr19<%rcx>, vr18<%r8>, $8
+	add_q    vr20<%rdx>, vr17<%r9>, vr19<%rcx>
+	mov_q    (vr20<%rdx>), $0
+	add_l    vr22<%esi>, vr11, $1
+	mov_l    vr11, vr22<%esi>
+.L3:
+	cmplt_l  vr24<%r9d>, vr11, $100
+	cjmp_t   vr24<%r9d>, .L2
+	mov_l    vr13, $0
+	jmp      .L5
+.L4:
+	mov_l    vr11, $0
+	jmp      .L7
+.L6:
+	localaddr vr16<%r9>, $0
+	mul_l    vr17<%r8d>, vr11, vr10
+	add_l    vr18<%ecx>, vr17<%r8d>, vr13
+	sconv_lq vr19<%rdx>, vr18<%ecx>
+	mul_q    vr20<%rsi>, vr19<%rdx>, $8
+	add_q    vr21<%r8>, vr16<%r9>, vr20<%rsi>
+	mov_q    vr22<%rcx>, (vr21<%r8>)
+	mov_q    vr14, vr22<%rcx>
+	mov_l    vr12, $0
+	jmp      .L9
+.L8:
+	localaddr vr16<%r9>, $1600
+	mul_l    vr17<%r8d>, vr11, vr10
+	add_l    vr18<%ecx>, vr17<%r8d>, vr12
+	sconv_lq vr19<%rdx>, vr18<%ecx>
+	mul_q    vr20<%rsi>, vr19<%rdx>, $8
+	add_q    vr21<%r8>, vr16<%r9>, vr20<%rsi>
+	mov_q    vr22<%rcx>, (vr21<%r8>)
+	localaddr vr23<%rdx>, $800
+	mul_l    vr24<%r9d>, vr13, vr10
+	add_l    vr25<%esi>, vr24<%r9d>, vr12
+	sconv_lq vr26<%r9>, vr25<%esi>
+	mul_q    vr27<%rsi>, vr26<%r9>, $8
+	add_q    vr28<%r9>, vr23<%rdx>, vr27<%rsi>
+	mov_q    vr30<%rdx>, (vr28<%r9>)
+	mul_q    vr29<%rsi>, vr14, vr30<%rdx>
+	add_q    vr31<%r9>, vr22<%rcx>, vr29<%rsi>
+	mov_q    (vr21<%r8>), vr31<%r9>
+	add_l    vr39<%edx>, vr12, $1
+	mov_l    vr12, vr39<%edx>
+.L9:
+	cmplt_l  vr40<%r9d>, vr12, vr10
+	cjmp_t   vr40<%r9d>, .L8
+	add_l    vr42<%r9d>, vr11, $1
+	mov_l    vr11, vr42<%r9d>
+.L7:
+	cmplt_l  vr43<%r9d>, vr11, vr10
+	cjmp_t   vr43<%r9d>, .L6
+	add_l    vr45<%r9d>, vr13, $1
+	mov_l    vr13, vr45<%r9d>
+.L5:
+	cmplt_l  vr46<%r9d>, vr13, vr10
+	cjmp_t   vr46<%r9d>, .L4
+	mov_l    vr11, $0
+	jmp      .L11
+.L10:
+	localaddr vr16<%r9>, $1600
+	sconv_lq vr17<%r8>, vr11
+	mul_q    vr18<%rcx>, vr17<%r8>, $8
+	add_q    vr19<%rdx>, vr16<%r9>, vr18<%rcx>
+	mov_q    vr1, (vr19<%rdx>)
+	call     print_i64
+	call     print_nl
+	add_l    vr21<%r9d>, vr11, $1
+	mov_l    vr11, vr21<%r9d>
+.L11:
+	cmplt_l  vr23<%r9d>, vr11, $100
+	cjmp_t   vr23<%r9d>, .L10
+	mov_l    vr0, $0
+	jmp      .Lmain_return
+.Lmain_return:
+	leave    $2400
+	ret      

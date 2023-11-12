@@ -1,0 +1,40 @@
+/* variable 'a' allocated vreg 10 */
+/* variable 'b' allocated vreg 11 */
+/* variable 'result' allocated vreg 12 */
+/* Function 'sum' uses 0 bytes of memory and 13 virtual registers */
+/* variable 'x' allocated vreg 10 */
+/* variable 'y' allocated vreg 11 */
+/* variable 'z' allocated vreg 12 */
+/* Function 'main' uses 0 bytes of memory and 13 virtual registers */
+	.section .text
+
+	.globl sum
+sum:
+	enter    $0
+	mov_l    vr10, vr1
+	mov_l    vr11, vr2
+	add_l    vr13, vr10, vr11
+	mov_l    vr12, vr13
+	mov_l    vr0, vr12
+	jmp      .Lsum_return
+.Lsum_return:
+	leave    $0
+	ret      
+
+	.globl main
+main:
+	enter    $0
+	mov_l    vr13, $2
+	mov_l    vr10, vr13
+	mov_l    vr13, $3
+	mov_l    vr11, vr13
+	mov_l    vr1, vr10
+	mov_l    vr2, vr11
+	call     sum
+	mov_l    vr13, vr0
+	mov_l    vr12, vr13
+	mov_l    vr0, vr12
+	jmp      .Lmain_return
+.Lmain_return:
+	leave    $0
+	ret      

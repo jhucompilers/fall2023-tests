@@ -1,0 +1,75 @@
+/* variable 'a' allocated vreg 10 */
+/* variable 'n' allocated vreg 11 */
+/* variable 'i' allocated vreg 12 */
+/* variable 'sum' allocated vreg 13 */
+/* Function 'sum' uses 0 bytes of memory and 14 virtual registers */
+/* variable 'arr' allocated 12 bytes of storage at offset 0 */
+/* variable 'result' allocated vreg 10 */
+/* Function 'main' uses 12 bytes of memory and 11 virtual registers */
+	.section .text
+
+	.globl sum
+sum:
+	enter    $0
+	mov_q    vr10, vr1
+	mov_l    vr11, vr2
+	mov_l    vr14, $0
+	mov_l    vr13, vr14
+	mov_l    vr15, $0
+	mov_l    vr12, vr15
+	jmp      .L1
+.L0:
+	sconv_lq vr14, vr12
+	mul_q    vr15, vr14, $4
+	add_q    vr16, vr10, vr15
+	mov_l    vr18, (vr16)
+	add_l    vr17, vr13, vr18
+	mov_l    vr13, vr17
+	mov_l    vr19, $1
+	add_l    vr20, vr12, vr19
+	mov_l    vr12, vr20
+.L1:
+	cmplt_l  vr21, vr12, vr11
+	cjmp_t   vr21, .L0
+	mov_l    vr0, vr13
+	jmp      .Lsum_return
+.Lsum_return:
+	leave    $0
+	ret      
+
+	.globl main
+main:
+	enter    $12
+	localaddr vr11, $0
+	mov_l    vr12, $0
+	sconv_lq vr13, vr12
+	mul_q    vr14, vr13, $4
+	add_q    vr15, vr11, vr14
+	mov_l    vr16, $1
+	mov_l    (vr15), vr16
+	localaddr vr11, $0
+	mov_l    vr12, $1
+	sconv_lq vr13, vr12
+	mul_q    vr14, vr13, $4
+	add_q    vr15, vr11, vr14
+	mov_l    vr16, $2
+	mov_l    (vr15), vr16
+	localaddr vr11, $0
+	mov_l    vr12, $2
+	sconv_lq vr13, vr12
+	mul_q    vr14, vr13, $4
+	add_q    vr15, vr11, vr14
+	mov_l    vr16, $3
+	mov_l    (vr15), vr16
+	localaddr vr11, $0
+	mov_q    vr1, vr11
+	mov_l    vr12, $3
+	mov_l    vr2, vr12
+	call     sum
+	mov_l    vr13, vr0
+	mov_l    vr10, vr13
+	mov_l    vr0, vr10
+	jmp      .Lmain_return
+.Lmain_return:
+	leave    $12
+	ret      

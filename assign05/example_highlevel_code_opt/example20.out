@@ -1,0 +1,49 @@
+/* variable 'c' allocated vreg 10 */
+/* Function 'ctoi' uses 0 bytes of memory and 11 virtual registers */
+/* Function 'main' uses 0 bytes of memory and 10 virtual registers */
+/* allocate machine register %rbx to variable 'c' (vr10), rank is 1 */
+	.section .text
+
+	.globl ctoi
+ctoi:
+	enter    $0
+	sconv_bl vr11<%r9d>, vr1
+	mov_l    vr0, vr11<%r9d>
+	jmp      .Lctoi_return
+.Lctoi_return:
+	leave    $0
+	ret      
+
+	.globl main
+main:
+	enter    $0
+	mov_b    vr1, $72
+	call     ctoi
+	mov_l    vr1, vr0
+	call     print_i32
+	call     print_nl
+	mov_b    vr1, $101
+	call     ctoi
+	mov_l    vr1, vr0
+	call     print_i32
+	call     print_nl
+	mov_b    vr1, $108
+	call     ctoi
+	mov_l    vr1, vr0
+	call     print_i32
+	call     print_nl
+	mov_b    vr1, $108
+	call     ctoi
+	mov_l    vr1, vr0
+	call     print_i32
+	call     print_nl
+	mov_b    vr1, $111
+	call     ctoi
+	mov_l    vr1, vr0
+	call     print_i32
+	call     print_nl
+	mov_l    vr0, $0
+	jmp      .Lmain_return
+.Lmain_return:
+	leave    $0
+	ret      

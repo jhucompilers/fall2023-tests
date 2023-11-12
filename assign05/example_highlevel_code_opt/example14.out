@@ -1,0 +1,19 @@
+/* variable 'arr' allocated 4 bytes of storage at offset 0 */
+/* variable 'sum' allocated vreg 10 */
+/* Function 'main' uses 4 bytes of memory and 11 virtual registers */
+/* allocate machine register %rbx to variable 'sum' (vr10), rank is 2 */
+	.section .text
+
+	.globl main
+main:
+	enter    $4
+	localaddr vr12<%r9>, $0
+	add_q    vr16<%r8>, vr12<%r9>, $0
+	mov_l    (vr16<%r8d>), $2
+	mov_l    vr24<%ecx>, (vr16<%r8d>)
+	add_l    vr23<%edx>, vr24<%ecx>, $1
+	mov_l    vr0, vr23<%edx>
+	jmp      .Lmain_return
+.Lmain_return:
+	leave    $4
+	ret      

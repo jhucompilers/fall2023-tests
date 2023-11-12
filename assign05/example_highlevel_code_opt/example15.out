@@ -1,0 +1,19 @@
+/* variable 'x' allocated vreg 10 */
+/* variable 'y' allocated vreg 11 */
+/* Function 'main' uses 0 bytes of memory and 12 virtual registers */
+/* allocate machine register %rbx to variable 'x' (vr10), rank is 2 */
+/* allocate machine register %r12 to variable 'y' (vr11), rank is 2 */
+	.section .text
+
+	.globl main
+main:
+	enter    $0
+	call     read_i32
+	mov_l    vr10, vr0
+	call     read_i32
+	add_l    vr14<%r9d>, vr10, vr0
+	mov_l    vr0, vr14<%r9d>
+	jmp      .Lmain_return
+.Lmain_return:
+	leave    $0
+	ret      

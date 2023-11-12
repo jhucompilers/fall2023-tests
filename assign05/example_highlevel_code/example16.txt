@@ -1,0 +1,18 @@
+/* Function 'main' uses 0 bytes of memory and 10 virtual registers */
+	.section .rodata
+
+_str0: .string "Hello, world\n"
+	.section .text
+
+	.globl main
+main:
+	enter    $0
+	mov_q    vr10, $_str0
+	mov_q    vr1, vr10
+	call     print_str
+	mov_l    vr10, $0
+	mov_l    vr0, vr10
+	jmp      .Lmain_return
+.Lmain_return:
+	leave    $0
+	ret      

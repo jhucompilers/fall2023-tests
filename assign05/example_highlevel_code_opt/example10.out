@@ -1,0 +1,16 @@
+/* variable 'a' allocated 4 bytes of storage at offset 0 */
+/* variable 'p' allocated vreg 10 */
+/* Function 'main' uses 4 bytes of memory and 11 virtual registers */
+/* allocate machine register %rbx to variable 'p' (vr10), rank is 2 */
+	.section .text
+
+	.globl main
+main:
+	enter    $4
+	localaddr vr11<%r9>, $0
+	mov_l    (vr11<%r9d>), $42
+	mov_l    vr0, (vr11<%r9d>)
+	jmp      .Lmain_return
+.Lmain_return:
+	leave    $4
+	ret      

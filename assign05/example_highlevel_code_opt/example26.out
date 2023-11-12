@@ -1,0 +1,38 @@
+/* variable 'p' allocated 24 bytes of storage at offset 0 */
+/* variable 's' allocated vreg 10 */
+/* Function 'main' uses 24 bytes of memory and 11 virtual registers */
+/* allocate machine register %rbx to variable 's' (vr10), rank is 2 */
+	.section .text
+
+	.globl main
+main:
+	enter    $24
+	localaddr vr12<%r9>, $0
+	add_q    vr14<%r8>, vr12<%r9>, $0
+	add_q    vr18<%rcx>, vr14<%r8>, $0
+	mov_b    (vr18<%cl>), $65
+	add_q    vr26<%rdx>, vr14<%r8>, $1
+	mov_b    (vr26<%dl>), $108
+	add_q    vr34<%rsi>, vr14<%r8>, $2
+	mov_b    (vr34<%sil>), $105
+	add_q    vr42<%rcx>, vr14<%r8>, $3
+	mov_b    (vr42<%cl>), $99
+	add_q    vr50<%rdx>, vr14<%r8>, $4
+	mov_b    (vr50<%dl>), $101
+	add_q    vr58<%rsi>, vr14<%r8>, $5
+	mov_b    (vr58<%sil>), $0
+	add_q    vr62<%rcx>, vr12<%r9>, $20
+	mov_l    (vr62<%ecx>), $43
+	mov_q    vr1, vr14<%r8>
+	call     print_str
+	call     print_nl
+	localaddr vr66<%r9>, $0
+	add_q    vr68<%r8>, vr66<%r9>, $20
+	mov_l    vr1, (vr68<%r8d>)
+	call     print_i32
+	call     print_nl
+	mov_l    vr0, $0
+	jmp      .Lmain_return
+.Lmain_return:
+	leave    $24
+	ret      

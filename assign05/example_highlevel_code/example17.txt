@@ -1,0 +1,22 @@
+/* variable 'a' allocated vreg 10 */
+/* variable 'b' allocated vreg 11 */
+/* Function 'main' uses 0 bytes of memory and 12 virtual registers */
+	.section .text
+
+	.globl main
+main:
+	enter    $0
+	mov_l    vr12, $4
+	mov_l    vr10, vr12
+	mov_l    vr12, $5
+	mov_l    vr11, vr12
+	add_l    vr12, vr10, vr11
+	mov_l    vr1, vr12
+	call     print_i32
+	call     print_nl
+	mov_l    vr12, $0
+	mov_l    vr0, vr12
+	jmp      .Lmain_return
+.Lmain_return:
+	leave    $0
+	ret      
