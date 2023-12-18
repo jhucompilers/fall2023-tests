@@ -1,12 +1,12 @@
 #! /usr/bin/env ruby
 
 option = ''
-
-if ARGV.length > 0 && ARGV[0].start_with?('-')
-  option = ARGV.shift
+while ARGV.length > 0 && ARGV[0].start_with?('-')
+  option += ARGV.shift
+  option += ' '
 end
 
-raise "Usage: ./run_test.rb [option] <testname>" if ARGV.length != 1
+raise "Usage: ./run_test.rb [options] <testname>" if ARGV.length != 1
 
 testname = ARGV[0]
 

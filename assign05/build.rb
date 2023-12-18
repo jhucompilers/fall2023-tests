@@ -127,21 +127,21 @@ EOF
   end
 end
 
-option = ''
-if ARGV.length > 0 && ARGV[0].start_with?('-')
-  option = ARGV.shift
+options = []
+while ARGV.length > 0 && ARGV[0].start_with?('-')
+  options.push(ARGV.shift)
 end
 
 testname = ARGV.shift
-raise "Usage: build.rb [option] <testname>" if testname.nil?
+raise "Usage: build.rb [options] <testname>" if testname.nil?
 
 raise "ASSIGN05_DIR environment variable must be defined" if !ENV.has_key?('ASSIGN05_DIR')
 compiler_exe = "#{ENV['ASSIGN05_DIR']}/nearly_cc"
 raise "#{compiler_exe} does not exist or is not executable" if !FileTest.executable?(compiler_exe)
 
 cmd = [compiler_exe]
-if option != ''
-  cmd.push(option)
+options.each do |opt|
+  cmd.push(opt)
 end
 cmd.push("input/#{testname}.c")
 
